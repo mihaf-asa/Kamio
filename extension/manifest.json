@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "KinoSync — Watch Together",
+  "version": "1.0.0",
+  "description": "Synchronize HTML5 video playback and live floating chat across any movie webpage via PeerJS WebRTC.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "KinoSync Watch Together"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["peerjs.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
